@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ExpressiveInstaller;
+namespace MezzioInstaller;
 
 use Composer\Composer;
 use Composer\Factory;
@@ -106,16 +106,16 @@ class OptionalPackages
         'northwoods/container',
         "phpstan/phpstan",
         "phpstan/phpstan-strict-rules",
-        'zendframework/zend-auradi-config',
-        'zendframework/zend-coding-standard',
-        'zendframework/zend-expressive-aurarouter',
-        'zendframework/zend-expressive-fastroute',
-        'zendframework/zend-expressive-platesrenderer',
-        'zendframework/zend-expressive-twigrenderer',
-        'zendframework/zend-expressive-zendrouter',
-        'zendframework/zend-expressive-zendviewrenderer',
-        'zendframework/zend-pimple-config',
-        'zendframework/zend-servicemanager',
+        'laminas/laminas-auradi-config',
+        'laminas/laminas-coding-standard',
+        'mezzio/mezzio-aurarouter',
+        'mezzio/mezzio-fastroute',
+        'mezzio/mezzio-platesrenderer',
+        'mezzio/mezzio-twigrenderer',
+        'mezzio/mezzio-laminasrouter',
+        'mezzio/mezzio-laminasviewrenderer',
+        'laminas/laminas-pimple-config',
+        'laminas/laminas-servicemanager',
     ];
 
     /**
@@ -408,8 +408,8 @@ class OptionalPackages
     {
         $this->io->write('<info>Remove installer</info>');
         // Remove installer script autoloading rules
-        unset($this->composerDefinition['autoload']['psr-4']['ExpressiveInstaller\\']);
-        unset($this->composerDefinition['autoload-dev']['psr-4']['ExpressiveInstallerTest\\']);
+        unset($this->composerDefinition['autoload']['psr-4']['MezzioInstaller\\']);
+        unset($this->composerDefinition['autoload-dev']['psr-4']['MezzioInstallerTest\\']);
         // Remove branch-alias
         unset($this->composerDefinition['extra']['branch-alias']);
         // Remove installer data
@@ -472,13 +472,13 @@ class OptionalPackages
             }
         }
         $this->recursiveRmdir($this->installerSource);
-        $this->recursiveRmdir($this->projectRoot . 'test/ExpressiveInstallerTest');
+        $this->recursiveRmdir($this->projectRoot . 'test/MezzioInstallerTest');
         $this->recursiveRmdir($this->projectRoot . 'docs');
         $this->preparePhpunitConfig();
     }
 
     /**
-     * Remove the ExpressiveInstaller exclusion from the phpunit configuration
+     * Remove the MezzioInstaller exclusion from the phpunit configuration
      *
      * @codeCoverageIgnore
      */
@@ -486,7 +486,7 @@ class OptionalPackages
     {
         $phpunitConfigFile = $this->projectRoot . 'phpunit.xml.dist';
         $phpunitConfig     = file_get_contents($phpunitConfigFile);
-        $phpunitConfig     = $this->removeLinesContainingStrings(['exclude', 'ExpressiveInstaller'], $phpunitConfig);
+        $phpunitConfig     = $this->removeLinesContainingStrings(['exclude', 'MezzioInstaller'], $phpunitConfig);
         file_put_contents($phpunitConfigFile, $phpunitConfig);
     }
 
