@@ -24,8 +24,8 @@ use RuntimeException;
  * Add this script to composer.json:
  *
  *  "scripts": {
- *      "pre-update-cmd": "ConductorInstaller\\OptionalPackages::install",
- *      "pre-install-cmd": "ConductorInstaller\\OptionalPackages::install"
+ *      "pre-update-cmd": "MezzioInstaller\\OptionalPackages::install",
+ *      "pre-install-cmd": "MezzioInstaller\\OptionalPackages::install"
  *  },
  */
 class OptionalPackages
@@ -170,9 +170,9 @@ class OptionalPackages
         $installer->io->write('<info>Setting up optional packages</info>');
         $installer->setupDataAndCacheDir();
         $installer->removeDevDependencies();
-        
+
         $installer->setPlatformType($installer->requestPlatformType());
-        $installer->setVCSType($installer->requestVCSType());        
+        $installer->setVCSType($installer->requestVCSType());
         $installer->setupPlatform();
         $installer->setupVCS();
 
