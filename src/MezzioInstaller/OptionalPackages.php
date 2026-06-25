@@ -181,7 +181,7 @@ class OptionalPackages
         // $installer->finalizePackage();
     }
 
-    public function __construct(IOInterface $io, Composer $composer, string $projectRoot = null)
+    public function __construct(IOInterface $io, Composer $composer, ?string $projectRoot = null)
     {
         $this->io = $io;
         $this->composer = $composer;
@@ -377,7 +377,7 @@ class OptionalPackages
             case self::VCS_SVN:
                 // install SVN
                 return;
-            case self::VCS_NONE;
+            case self::VCS_NONE:
                 // none
                 return;
             default:
