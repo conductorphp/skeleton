@@ -1,6 +1,6 @@
 {
   "name": "conductor/skeleton",
-  "version": "1.0.1",
+  "version": "2.1.0",
   "description": "Conductor: Skeleton",
   "type": "library",
   "homepage": "https://github.com/conductorphp/skeleton",
@@ -16,7 +16,7 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "php": "~8.2.0|~8.3.0|~8.4.0|~8.5.0",
+    "php": "~8.4.1|~8.5.0",
     "laminas/laminas-component-installer": "^2.1.1",
     "laminas/laminas-config-aggregator": "^1.0",
     "laminas/laminas-diactoros": "^1.7.1 || ^2.0",
