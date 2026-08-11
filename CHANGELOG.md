@@ -1,3 +1,10 @@
+[2.1.1](https://github.com/conductorphp/skeleton/compare/2.1.0...2.1.1) (2026-08-11)
+
+### Bug Fixes
+* to phpunit 13 (CTAP-1226) ([170560f](https://github.com/conductorphp/skeleton/commit/170560f9d4dbd3f1c666fbc232027b8fe441202e))
+
+<!--- CHANGELOG SPLIT MARKER -->
+
 [2.1.0](https://github.com/conductorphp/skeleton/compare/2.0.0...2.1.0) (2026-08-10)
 
 ### Features
